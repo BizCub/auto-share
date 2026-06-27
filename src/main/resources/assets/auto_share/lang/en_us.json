@@ -1,0 +1,5 @@
+{
+    "text.autoconfig.auto_share.option.arePacksRequired": "Required Packs",
+    "text.autoconfig.auto_share.option.arePacksRequired.@Tooltip": "Make resource packs required for installation?",
+    "text.autoconfig.auto_share.option.links": "Links"
+}
