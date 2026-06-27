@@ -5,10 +5,8 @@ plugins {
 }
 
 multiloader {
-    sc.constants["is_cloth_config_available"] = isClothConfigAvailable
-
     sc.replacements {
-        string(scp >= "1.21.11" && !isForge, "auto_config") {
+        string(scp >= "1.21.11", "auto_config") {
             replace("AutoConfig", "AutoConfigClient")
         }
         string(scp >= "1.20.3") {
@@ -18,9 +16,9 @@ multiloader {
 
     addDependency(
         dependency = "me.shedaniel.cloth:cloth-config-${mod.loader}:${getDep("cloth-config").split("+").first()}",
-        configuration = if (isClothConfigAvailable) "implementation" else "compileOnly",
+        configuration = "implementation",
         repository = "maven.shedaniel.me",
-        isPublishDepEnabled = isClothConfigAvailable,
+        isPublishDepEnabled = true,
         publishProjectId = "cloth-config"
     )
 
