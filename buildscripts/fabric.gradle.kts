@@ -22,12 +22,6 @@ multiloader {
 
         val awFile = rootProject.file(ctFabricPath)
         if (awFile.exists()) accessWidenerPath.set(sc.process(awFile, ctFabricProcessPath))
-
-        decompilers {
-            get("vineflower").apply {
-                options.put("mark-corresponding-synthetics", "1")
-            }
-        }
     }
 
     val builtFile = if (isObfuscated)

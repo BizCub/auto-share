@@ -29,8 +29,8 @@ multiloader {
         addDependency(
             dependency = "com.terraformersmc:modmenu:${getDep("modmenu")}",
             repository = "maven.terraformersmc.com/releases",
-            isPublishDepEnabled = true,
-            excludedModules = listOf("eu.pb4")
+            excludedModules = listOf("eu.pb4"),
+            isPublishDepEnabled = true
         )
     }
 }
