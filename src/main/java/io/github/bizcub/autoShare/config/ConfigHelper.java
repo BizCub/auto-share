@@ -1,4 +1,4 @@
-package com.bizcub.autoShare.config;
+package io.github.bizcub.autoShare.config;
 
 //~ auto_config
 import me.shedaniel.autoconfig.AutoConfigClient;

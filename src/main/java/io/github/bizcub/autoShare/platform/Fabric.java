@@ -1,8 +1,8 @@
 //? fabric {
-package com.bizcub.autoShare.platform;
+package io.github.bizcub.autoShare.platform;
 
-import com.bizcub.autoShare.Main;
-import com.bizcub.autoShare.config.ConfigHelper;
+import io.github.bizcub.autoShare.Main;
+import io.github.bizcub.autoShare.config.ConfigHelper;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import net.fabricmc.api.ClientModInitializer;

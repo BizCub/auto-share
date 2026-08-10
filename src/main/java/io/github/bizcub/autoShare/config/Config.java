@@ -1,4 +1,4 @@
-package com.bizcub.autoShare.config;
+package io.github.bizcub.autoShare.config;
 
 import java.util.List;
 

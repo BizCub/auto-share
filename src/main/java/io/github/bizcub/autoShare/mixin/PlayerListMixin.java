@@ -1,6 +1,6 @@
-package com.bizcub.autoShare.mixin;
+package io.github.bizcub.autoShare.mixin;
 
-import com.bizcub.autoShare.config.Config;
+import io.github.bizcub.autoShare.config.Config;
 import net.minecraft.network.Connection;
 /*? >=1.20.2*/ import net.minecraft.network.protocol.common.ClientboundResourcePackPushPacket;
 import net.minecraft.network.chat.Component;

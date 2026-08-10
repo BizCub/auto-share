@@ -1,6 +1,6 @@
 {
     "required": true,
-    "package": "com.bizcub.autoShare.mixin",
+    "package": "io.github.bizcub.autoShare.mixin",
     "injectors": {
         "defaultRequire": 1
     },

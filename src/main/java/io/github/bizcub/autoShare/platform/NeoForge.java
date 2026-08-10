@@ -1,8 +1,8 @@
 //? neoforge {
-/*package com.bizcub.autoShare.platform;
+/*package io.github.bizcub.autoShare.platform;
 
-import com.bizcub.autoShare.Main;
-import com.bizcub.autoShare.config.ConfigHelper;
+import io.github.bizcub.autoShare.Main;
+import io.github.bizcub.autoShare.config.ConfigHelper;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;

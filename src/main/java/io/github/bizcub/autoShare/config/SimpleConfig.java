@@ -1,6 +1,6 @@
-package com.bizcub.autoShare.config;
+package io.github.bizcub.autoShare.config;
 
-import com.bizcub.autoShare.Main;
+import io.github.bizcub.autoShare.Main;
 import io.github.bizcub.simpleConfigLib.autoconfig.ConfigHolder;
 import io.github.bizcub.simpleConfigLib.autoconfig.annotation.*;
 
