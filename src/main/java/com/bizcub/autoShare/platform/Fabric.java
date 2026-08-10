@@ -2,7 +2,7 @@
 package com.bizcub.autoShare.platform;
 
 import com.bizcub.autoShare.Main;
-import com.bizcub.autoShare.config.Compat;
+import com.bizcub.autoShare.config.ConfigHelper;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import net.fabricmc.api.ClientModInitializer;
@@ -18,7 +18,7 @@ public class Fabric implements ClientModInitializer {
 
         @Override
         public ConfigScreenFactory<?> getModConfigScreenFactory() {
-            return Compat::getScreen;
+            return ConfigHelper::getScreen;
         }
     }
 }//?}

@@ -2,7 +2,7 @@
 /*package com.bizcub.autoShare.platform;
 
 import com.bizcub.autoShare.Main;
-import com.bizcub.autoShare.config.Compat;
+import com.bizcub.autoShare.config.ConfigHelper;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -15,7 +15,7 @@ public class NeoForge {
 
         ModLoadingContext.get().registerExtensionPoint(
                 IConfigScreenFactory.class, () -> (minecraft, screen) ->
-                        Compat.getScreen(screen)
+                        ConfigHelper.getScreen(screen)
         );
     }
 }*///?}

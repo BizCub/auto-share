@@ -1,6 +1,6 @@
 package com.bizcub.autoShare.mixin;
 
-import com.bizcub.autoShare.Main;
+import com.bizcub.autoShare.config.Config;
 import net.minecraft.network.Connection;
 /*? >=1.20.2*/ import net.minecraft.network.protocol.common.ClientboundResourcePackPushPacket;
 import net.minecraft.network.chat.Component;
@@ -21,8 +21,8 @@ public class PlayerListMixin {
 
     @Inject(method = "placeNewPlayer", at = @At("TAIL"))
     private void sendPack(Connection connection, ServerPlayer player, /*? >=1.20.2 >>+ ','*/ CommonListenerCookie cookie, CallbackInfo ci) {
-        Main.getConfig().links().forEach(link -> {
-            boolean required = Main.getConfig().arePacksRequired();
+        Config.get().links().forEach(link -> {
+            boolean required = Config.get().arePacksRequired();
 
             //? >=1.20.2 {
             UUID id = UUID.nameUUIDFromBytes(link.getBytes(StandardCharsets.UTF_8));

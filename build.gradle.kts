@@ -25,10 +25,16 @@ multiloader {
         isPublishDepEnabled = true,
         publishProjectId = "cloth-config"
     )
+    addDependency(
+        dependency = "io.github.bizcub:simple-config-lib:1.0-${mod.loader}+${mod.mc}"
+    )
 
     if (isFabric) {
         addDependency(
             dependency = "net.fabricmc:fabric-loader:${getDep("fabric")}"
+        )
+        addDependency(
+            dependency = "net.fabricmc.fabric-api:fabric-api:${getDep("fabric-api")}"
         )
         addDependency(
             dependency = "com.terraformersmc:modmenu:${getDep("modmenu")}",
