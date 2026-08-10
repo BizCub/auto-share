@@ -1,7 +1,5 @@
 plugins {
-    id("me.modmuss50.mod-publish-plugin")
-    id("dev.kikugie.fletching-table")
-    id("com.bizcub.multiloader")
+    id("io.github.bizcub.multiloader")
 }
 
 multiloader {
@@ -17,9 +15,12 @@ multiloader {
     setMREnvironment(mrEnvs.serverOnly)
     setCFEnvironment(cfEnvs.server)
 
+    versionRange(version = "26.1.2", to = "latest")
+    versionRange(version = "1.21.1", to = "1.21.11")
+    versionRange(version = "1.21.1", from = "1.20.5", loader = "fabric")
+
     addDependency(
         dependency = "me.shedaniel.cloth:cloth-config-${mod.loader}:${getDep("cloth-config").split("+").first()}",
-        configuration = "implementation",
         repository = "maven.shedaniel.me",
         isPublishDepEnabled = true,
         publishProjectId = "cloth-config"
