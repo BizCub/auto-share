@@ -13,9 +13,7 @@ public class NeoForge {
     public NeoForge() {
         Main.init();
 
-        ModLoadingContext.get().registerExtensionPoint(
-                IConfigScreenFactory.class, () -> (minecraft, screen) ->
-                        ConfigHelper.getScreen(screen)
-        );
+        ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () ->
+            (container, parent) -> ConfigHelper.getScreen(parent));
     }
 }*///?}

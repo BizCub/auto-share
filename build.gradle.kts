@@ -4,7 +4,7 @@ plugins {
 
 multiloader {
     sc.replacements {
-        string(scp >= "1.21.11", "auto_config") {
+        string(scp >= "1.21.11" && !isForge, "auto_config") {
             replace("AutoConfig", "AutoConfigClient")
         }
         string(scp >= "1.20.3") {
@@ -18,15 +18,18 @@ multiloader {
     versionRange(version = "26.1.2", to = "latest")
     versionRange(version = "1.21.1", to = "1.21.11")
     versionRange(version = "1.21.1", from = "1.20.5", loader = "fabric")
+    versionRange(version = "1.21.1", from = "1.20.6", loader = "forge")
 
     addDependency(
-        dependency = "me.shedaniel.cloth:cloth-config-${mod.loader}:${getDep("cloth-config").split("+").first()}",
-        repository = "maven.shedaniel.me",
-        isPublishDepEnabled = true,
-        publishProjectId = "cloth-config"
-    )
-    addDependency(
         dependency = "io.github.bizcub:simple-config-lib:1.0-${mod.loader}+${mod.mc}"
+    )
+    val isClothConfigAvailable = !(isForge && scp > "1.21.3")
+    addDependency(
+        dependency = "me.shedaniel.cloth:cloth-config-${mod.loader}:${getDep("cloth-config").split("+").first()}",
+        configuration = if (isClothConfigAvailable) "implementation" else "compileOnly",
+        repository = "maven.shedaniel.me",
+        isPublishDepEnabled = isClothConfigAvailable,
+        publishProjectId = "cloth-config"
     )
 
     if (isFabric) {
