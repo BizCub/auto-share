@@ -22,7 +22,7 @@ public class ClothConfig implements Config, ConfigData {
     @Tooltip
     public boolean arePacksRequired = Config.super.arePacksRequired();
 
-    public List<String> links = Config.super.links();
+    public List<LinkProfile> linkProfiles = Config.super.linkProfiles();
 
     @Override
     public boolean arePacksRequired() {
@@ -30,7 +30,7 @@ public class ClothConfig implements Config, ConfigData {
     }
 
     @Override
-    public List<String> links() {
-        return this.links;
+    public List<LinkProfile> linkProfiles() {
+        return this.linkProfiles;
     }
 }

@@ -21,16 +21,21 @@ public class PlayerListMixin {
 
     @Inject(method = "placeNewPlayer", at = @At("TAIL"))
     private void sendPack(Connection connection, ServerPlayer player, /*? >=1.20.2 >>+ ','*/ CommonListenerCookie cookie, CallbackInfo ci) {
-        Config.get().links().forEach(link -> {
-            boolean required = Config.get().arePacksRequired();
+        boolean required = Config.get().arePacksRequired();
 
-            //? >=1.20.2 {
-            UUID id = UUID.nameUUIDFromBytes(link.getBytes(StandardCharsets.UTF_8));
-            //~ if >=1.20.5 'Component.empty()' -> 'Optional.empty()' {
-            connection.send(new ClientboundResourcePackPushPacket(/*? >=1.20.3 >>+ ','*/ id, link, "", required, Optional.empty()));//~}
+        Config.get().linkProfiles().forEach(linkProfile -> {
+            if (linkProfile.isEnabled) {
+                linkProfile.links.forEach(link -> {
 
-            //?} else {
-            /*player.sendTexturePack(link, "", required, Component.empty());*///?}
+                    //? >=1.20.2 {
+                    UUID id = UUID.nameUUIDFromBytes(link.getBytes(StandardCharsets.UTF_8));
+                    //~ if >=1.20.5 'Component.empty()' -> 'Optional.empty()' {
+                    connection.send(new ClientboundResourcePackPushPacket(/*? >=1.20.3 >>+ ','*/ id, link, "", required, Optional.empty()));//~}
+
+                    //?} else
+                    //player.sendTexturePack(link, "", required, Component.empty());
+                });
+            }
         });
     }
 }

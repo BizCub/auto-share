@@ -1,5 +1,17 @@
 {
+    "text.autoconfig.auto_share.title": "Настройки Auto Share",
     "text.autoconfig.auto_share.option.arePacksRequired": "Необходимые пакеты",
     "text.autoconfig.auto_share.option.arePacksRequired.@Tooltip": "Сделать пакеты ресурсов обязательными для установки?",
-    "text.autoconfig.auto_share.option.links": "Ссылки"
+    "text.autoconfig.auto_share.option.linkProfiles": "Профили ссылок",
+    "text.autoconfig.auto_share.option.LinkProfile": "Профиль",
+    "text.autoconfig.auto_share.option.LinkProfile.isEnabled": "Включить профиль",
+    "text.autoconfig.auto_share.option.LinkProfile.links": "Ссылки",
+
+    "text.auto_share.group.general": "Настройки Auto Share",
+    "text.auto_share.option.arePacksRequired": "Необходимые пакеты",
+    "text.auto_share.option.arePacksRequired.tooltip": "Сделать пакеты ресурсов обязательными для установки?",
+    "text.auto_share.option.linkProfiles": "Профили ссылок",
+    "text.auto_share.option.linkProfiles.element": "Профиль",
+    "text.auto_share.option.linkProfiles.isEnabled": "Включить профиль",
+    "text.auto_share.option.linkProfiles.links": "Ссылки"
 }

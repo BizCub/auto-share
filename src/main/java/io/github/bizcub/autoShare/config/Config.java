@@ -21,7 +21,7 @@ public interface Config {
         return false;
     }
 
-    default List<String> links() {
+    default List<LinkProfile> linkProfiles() {
         return List.of();
     }
 }

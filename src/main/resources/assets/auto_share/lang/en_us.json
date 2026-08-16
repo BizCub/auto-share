@@ -1,5 +1,17 @@
 {
+    "text.autoconfig.auto_share.title": "Auto Share Settings",
     "text.autoconfig.auto_share.option.arePacksRequired": "Required Packs",
     "text.autoconfig.auto_share.option.arePacksRequired.@Tooltip": "Make resource packs required for installation?",
-    "text.autoconfig.auto_share.option.links": "Links"
+    "text.autoconfig.auto_share.option.linkProfiles": "Link Profiles",
+    "text.autoconfig.auto_share.option.LinkProfile": "Link Profile",
+    "text.autoconfig.auto_share.option.LinkProfile.isEnabled": "Enable Profile",
+    "text.autoconfig.auto_share.option.LinkProfile.links": "Links",
+
+    "text.auto_share.group.general": "Auto Share Settings",
+    "text.auto_share.option.arePacksRequired": "Required Packs",
+    "text.auto_share.option.arePacksRequired.tooltip": "Make resource packs required for installation?",
+    "text.auto_share.option.linkProfiles": "Link Profiles",
+    "text.auto_share.option.linkProfiles.element": "Link Profile",
+    "text.auto_share.option.linkProfiles.isEnabled": "Enable Profile",
+    "text.auto_share.option.linkProfiles.links": "Links"
 }

@@ -20,6 +20,9 @@ multiloader {
     versionRange(version = "1.21.1", from = "1.20.5", loader = "fabric")
     versionRange(version = "1.21.1", from = "1.20.6", loader = "forge")
 
+    if (!isForge) addDependency(
+        dependency = "maven.modrinth:rrls:${getDep("rrls")}"
+    )
     addDependency(
         dependency = "io.github.bizcub:simple-config-lib:1.0-${mod.loader}+${mod.mc}"
     )
