@@ -5,12 +5,12 @@ import io.github.bizcub.autoShare.Main;
 import io.github.bizcub.autoShare.config.ConfigHelper;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.ModInitializer;
 
-public class Fabric implements ClientModInitializer {
+public class Fabric implements ModInitializer {
 
     @Override
-    public void onInitializeClient() {
+    public void onInitialize() {
         Main.init();
     }
 
