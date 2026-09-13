@@ -1,6 +1,7 @@
 package io.github.bizcub.autoShare.config;
 
 //~ auto_config
+import io.github.bizcub.autoShare.Main;
 import io.github.bizcub.simpleConfigLib.autoconfig.gui.ConfigScreenFactory;
 import me.shedaniel.autoconfig.AutoConfigClient;
 import net.minecraft.client.gui.screens.Screen;
@@ -25,7 +26,7 @@ public class ConfigHelper {
 
     public static Screen getScreen(Screen parent) {
         if (isSimpleConfigLoaded()) {
-            return ConfigScreenFactory.open(SimpleConfig.getInstance(), parent);
+            return ConfigScreenFactory.open(Main.MOD_ID, parent);
         }
         if (isClothConfigLoaded()) {
             return AutoConfigClient.getConfigScreen(ClothConfig.class, parent).get();
