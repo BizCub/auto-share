@@ -1,9 +1,7 @@
 //? forge {
 /*package io.github.bizcub.autoShare.platform;
 
-import io.github.bizcub.autoShare.AutoShareCommand;
 import io.github.bizcub.autoShare.Main;
-import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,11 +18,6 @@ public class Forge {
         if (FMLEnvironment.dist.isClient()) {
             ForgeClient.init();
         }
-    }
-
-    @SubscribeEvent
-    public static void onRegisterCommands(RegisterCommandsEvent event) {
-        AutoShareCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent

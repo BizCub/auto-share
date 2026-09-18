@@ -8,6 +8,9 @@ multiloader {
             replace("me.shedaniel.autoconfig.AutoConfig", "me.shedaniel.autoconfig.AutoConfigClient")
             replace("AutoConfig.getConfigScreen", "AutoConfigClient.getConfigScreen")
         }
+        string(scp >= "1.21.6") {
+            replace("net.minecraftforge.eventbus.api.SubscribeEvent", "net.minecraftforge.eventbus.api.listener.SubscribeEvent")
+        }
         string(scp >= "1.20.3") {
             replace("ClientboundResourcePackPacket", "ClientboundResourcePackPushPacket")
         }

@@ -25,14 +25,4 @@ public class Main {
             Config.set(ClothConfig.getInstance());
         }
     }
-
-    public static void reload() {
-        if (ConfigHelperCommon.isSimpleConfigLoaded()) {
-            ConfigHolder<SimpleConfig> holder = SimpleConfig.getInstance();
-            holder.load();
-            Config.set(holder.get());
-        } else if (ConfigHelperCommon.isClothConfigLoaded()) {
-            Config.set(ClothConfig.getInstance());
-        }
-    }
 }
