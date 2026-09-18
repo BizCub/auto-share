@@ -13,6 +13,7 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 public class NeoForgeClient {
 
     public NeoForgeClient() {
+        //~ if >=1.21.9 'dist' -> 'getDist()'
         if (FMLEnvironment.getDist().isClient()) {
             ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () ->
                     (container, parent) -> ConfigHelperClient.getScreen(parent));
