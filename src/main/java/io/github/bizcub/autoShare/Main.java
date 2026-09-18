@@ -16,22 +16,22 @@ public class Main {
     };
 
     public static void init() {
-        if (ConfigHelper.isSimpleConfigLoaded()) {
+        if (ConfigHelperCommon.isSimpleConfigLoaded()) {
             ConfigHolder<SimpleConfig> holder = SimpleConfig.getInstance();
             Config.set(holder.get());
             holder.onSave(ON_SAVE);
-        } else if (ConfigHelper.isClothConfigLoaded()) {
+        } else if (ConfigHelperCommon.isClothConfigLoaded()) {
             ClothConfig.init();
             Config.set(ClothConfig.getInstance());
         }
     }
 
     public static void reload() {
-        if (ConfigHelper.isSimpleConfigLoaded()) {
+        if (ConfigHelperCommon.isSimpleConfigLoaded()) {
             ConfigHolder<SimpleConfig> holder = SimpleConfig.getInstance();
             holder.load();
             Config.set(holder.get());
-        } else if (ConfigHelper.isClothConfigLoaded()) {
+        } else if (ConfigHelperCommon.isClothConfigLoaded()) {
             Config.set(ClothConfig.getInstance());
         }
     }
