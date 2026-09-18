@@ -3,14 +3,12 @@
 
 import io.github.bizcub.autoShare.AutoShareCommand;
 import io.github.bizcub.autoShare.Main;
-import io.github.bizcub.autoShare.config.ConfigHelper;
-import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 
 @Mod(Main.MOD_ID)
 @EventBusSubscriber(modid = Main.MOD_ID)
@@ -19,8 +17,9 @@ public class Forge {
     public Forge() {
         Main.init();
 
-        ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () ->
-                new ConfigScreenHandler.ConfigScreenFactory((minecraft, screen) -> ConfigHelper.getScreen(screen)));
+        if (FMLEnvironment.dist.isClient()) {
+            ForgeClient.init();
+        }
     }
 
     @SubscribeEvent

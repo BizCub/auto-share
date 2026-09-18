@@ -1,5 +1,6 @@
 package io.github.bizcub.autoShare.config;
 
+//~ auto_config
 import io.github.bizcub.autoShare.Main;
 import io.github.bizcub.simpleConfigLib.autoconfig.gui.ConfigScreens;
 import me.shedaniel.autoconfig.AutoConfigClient;
