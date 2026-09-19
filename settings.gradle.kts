@@ -15,6 +15,7 @@ plugins {
 
 multiloader {
     match("26.1.2", fb, fg, nf)
+    match("1.21.8",     fg)
     match("1.21.1", fb, fg, nf)
     match("1.20.4", fb, fg)
     match("1.20.2", fb, fg)
