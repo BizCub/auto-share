@@ -20,7 +20,9 @@ multiloader {
     setCFEnvironment(cfEnvs.server)
 
     versionRange(version = "26.1.2", to = "latest")
+    versionRange(version = "1.21.6", to = "1.21.11", loader = "forge")
     versionRange(version = "1.21.1", to = "1.21.11")
+    versionRange(version = "1.21.1", to = "1.21.5", loader = "forge")
     versionRange(version = "1.21.1", from = "1.20.5", loader = "fabric")
     versionRange(version = "1.21.1", from = "1.20.6", loader = "forge")
 
