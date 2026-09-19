@@ -52,12 +52,32 @@ public class PackSender {
     private static void pushEnabled(ServerPlayer player, Map<UUID, String> enabled) {
         boolean required = Config.get().arePacksRequired();
         enabled.forEach((id, link) -> {
-            //? >=1.20.2 {
-            //~ if >=1.20.5 'Component.empty()' -> 'Optional.empty()' {
-            player.connection.send(new ClientboundResourcePackPushPacket(/*? >=1.20.3 >>+ ','*/ id, link, "", required, Optional.empty()));//~}
-            //?} else
-            //player.sendTexturePack(link, "", required, Component.empty());
+            String hash = PackHashCache.get(link);
+            if (hash.isEmpty()) {
+                MinecraftServer server = player.level().getServer();
+                PackHashCache.computeAsync(link, () -> {
+                    if (server != null) {
+                        server.execute(() -> {
+                            ServerPlayer p = server.getPlayerList().getPlayer(player.getUUID());
+                            if (p != null) {
+                                sendPack(p, id, link, required);
+                            }
+                        });
+                    }
+                });
+                return;
+            }
+            sendPack(player, id, link, required);
         });
+    }
+
+    private static void sendPack(ServerPlayer player, UUID id, String link, boolean required) {
+        String hash = PackHashCache.get(link);
+        //? >=1.20.2 {
+        //~ if >=1.20.5 'Component.empty()' -> 'Optional.empty()' {
+        player.connection.send(new ClientboundResourcePackPushPacket(/*? >=1.20.3 >>+ ','*/ id, link, hash, required, Optional.empty()));//~}
+        //?} else
+        //player.sendTexturePack(link, hash, required, Component.empty());
     }
 
     private static void popPack(ServerPlayer player, UUID id) {
